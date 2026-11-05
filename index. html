@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YJ FlySkyTech Ghana</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f7;
+  color: #222;
+}
+
+header {
+  background: #082b55;
+  color: white;
+  padding: 22px 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  margin: 8px 0 0;
+}
+
+nav {
+  background: #064e89;
+  padding: 13px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.search {
+  padding: 20px;
+  text-align: center;
+}
+
+.search input {
+  width: 90%;
+  max-width: 500px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #082b55, #087ac0);
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 28px;
+}
+
+.hero button {
+  background: #ffb900;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.products {
+  padding: 20px;
+}
+
+.products h2 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px #ddd;
+}
+
+.product-image {
+  font-size: 55px;
+  background: #eef4fa;
+  padding: 20px 0;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 16px;
+}
+
+.price {
+  color: #087ac0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card button {
+  background: #087ac0;
+  color: white;
+  border: none;
+  padding: 11px;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.contact {
+  background: white;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.contact a {
+  display: inline-block;
+  background: #128c45;
+  color: white;
+  text-decoration: none;
+  padding: 14px 25px;
+  border-radius: 7px;
+}
+
+footer {
+  background: #082b55;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>YJ FlySkyTech Ghana</h1>
+  <p>Your Trusted Electronics Marketplace</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to YJ FlySkyTech</h2>
+  <p>Discover Electronics, Computers, Phones & Drones.</p>
+  <p>Quality Products. Affordable Prices.</p>
+  <button onclick="document.getElementById('products').scrollIntoView()">
+    Shop Now
+  </button>
+</section>
+
+<div class="search">
+  <input type="text" id="search"
+  placeholder="Search phones, computers, drones..."
+  oninput="searchProducts()">
+</div>
+
+<section class="products" id="products">
+  <h2>🔥 Featured Products</h2>
+
+  <div class="grid" id="productGrid">
+
+    <div class="card">
+      <div class="product-image">📱</div>
+      <h3>Smartphones</h3>
+      <p>Latest Android Phones</p>
+      <p class="price">GH₵ 1,500</p>
+      <button onclick="order('Smartphone')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="product-image">💻</div>
+      <h3>Laptops</h3>
+      <p>Computers & Accessories</p>
+      <p class="price">GH₵ 2,500</p>
+      <button onclick="order('Laptop')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="product-image">🚁</div>
+      <h3>Drones</h3>
+      <p>Professional & GPS Drones</p>
+      <p class="price">GH₵ 2,000</p>
+      <button onclick="order('Drone')">Order Now</button>
+    </div>
+
+    <div class="card">
+      <div class="product-image">🎧</div>
+      <h3>Accessories</h3>
+      <p>Headphones & Chargers</p>
+      <p class="price">GH₵ 150</p>
+      <button onclick="order('Accessories')">Order Now</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact YJ FlySkyTech Ghana</h2>
+  <p>Interested in a product? Contact us directly on WhatsApp.</p>
+  <a href="https://wa.me/233XXXXXXXXX" target="_blank">
+    Chat With Us on WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 YJ FlySkyTech Ghana</p>
+  <p>All Rights Reserved.</p>
+</footer>
+
+<script>
+function order(product) {
+  const phone = "233XXXXXXXXX";
+  const message = "Hello YJ FlySkyTech, I want to order " + product;
+  window.open(
+    "https://wa.me/" + phone + "?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+function searchProducts() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.style.display =
+      card.innerText.toLowerCase().includes(search)
+      ? ""
+      : "none";
+  });
+}
+</script>
+
+</body>
+</html>
